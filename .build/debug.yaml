@@ -1,0 +1,32 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  test: []
+  default: ["<hello-swift.module>", "<hello-swift.exe>"]
+commands: 
+  /home/albertux/hello-swift/.build/debug/helloswift.build:
+    tool: mkdir
+    outputs: ["/home/albertux/hello-swift/.build/debug/helloswift.build"]
+
+  <hello-swift.module>:
+    tool: swift-compiler
+    executable: /home/albertux/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a-ubuntu14.04/usr/bin/swiftc
+    module-name: helloswift
+    module-output-path: /home/albertux/hello-swift/.build/debug/helloswift.swiftmodule
+    inputs: []
+    outputs: ["<hello-swift.module>", "/home/albertux/hello-swift/.build/debug/helloswift.build/main.swift.o"]
+    import-paths: /home/albertux/hello-swift/.build/debug
+    temps-path: /home/albertux/hello-swift/.build/debug/helloswift.build
+    objects: ["/home/albertux/hello-swift/.build/debug/helloswift.build/main.swift.o"]
+    other-args: ["-j8", "-Onone", "-g", "-D", SWIFT_PACKAGE, "-enable-testing"]
+    sources: ["/home/albertux/hello-swift/Sources/main.swift"]
+    is-library: false
+
+  <hello-swift.exe>:
+    tool: shell
+    description: Linking .build/debug/hello-swift
+    inputs: ["<hello-swift.module>", "/home/albertux/hello-swift/.build/debug/helloswift.build/main.swift.o"]
+    outputs: ["<hello-swift.exe>", "/home/albertux/hello-swift/.build/debug/hello-swift"]
+    args: ["/home/albertux/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a-ubuntu14.04/usr/bin/swiftc", "-g", "-L/home/albertux/hello-swift/.build/debug", "-o", "/home/albertux/hello-swift/.build/debug/hello-swift", "-emit-executable", "/home/albertux/hello-swift/.build/debug/helloswift.build/main.swift.o"]
+

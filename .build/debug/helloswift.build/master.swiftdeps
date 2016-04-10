@@ -1,0 +1,5 @@
+version: "Swift version 3.0-dev (LLVM b010debd0e, Clang 3e4d01d89b, Swift 7182c58cb2)"
+options: "8ff0de439d4471277252c5d93e14c140"
+build_time: [513637436, 641807000]
+inputs:
+  "/home/albertux/hello-swift/Sources/main.swift": [513636056, 0]

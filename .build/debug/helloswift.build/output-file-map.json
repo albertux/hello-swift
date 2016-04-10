@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/albertux/hello-swift/.build/debug/helloswift.build/master.swiftdeps"
+  },
+  "/home/albertux/hello-swift/Sources/main.swift": {
+    "dependencies": "/home/albertux/hello-swift/.build/debug/helloswift.build/main.d",
+    "object": "/home/albertux/hello-swift/.build/debug/helloswift.build/main.swift.o",
+    "swiftmodule": "/home/albertux/hello-swift/.build/debug/helloswift.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/albertux/hello-swift/.build/debug/helloswift.build/main.swiftdeps"
+  }
+}
